@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Map Connector Example</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+    }
+    #image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0; /* Placeholder for styling */
+    }
+    #text-blocks {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #e0e0e0; /* Placeholder for styling */
+    }
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+</style>
+</head>
+<body>
+
+<div id="image-container">
+    <img src="your-image.jpg" usemap="#image-map">
+    <map name="image-map">
+        <area shape="rect" coords="34,44,270,350" href="#" id="area1">
+        <!-- Add more areas as needed -->
+    </map>
+</div>
+
+<div id="text-blocks">
+    <div id="text1">Text Block 1</div>
+    <!-- Add more text blocks as needed -->
+</div>
+
+<canvas id="lineCanvas"></canvas>
+
+<script>
+    function drawLine(fromX, fromY, toX, toY) {
+        var canvas = document.getElementById('lineCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(fromX, fromY);
+        ctx.lineTo(toX, toY);
+        ctx.strokeStyle = 'blue';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+    }
+
+    function connectAreasToTexts() {
+        const canvas = document.getElementById('lineCanvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        document.querySelectorAll('area').forEach(area => {
+            const coords = area.getAttribute('coords').split(',').map(Number);
+            const centerX = (coords[0] + coords[2]) / 2;
+            const centerY = (coords[1] + coords[3]) / 2;
+
+            const textBlock = document.getElementById(area.getAttribute('id').replace('area', 'text'));
+            const textBlockRect = textBlock.getBoundingClientRect();
+
+            drawLine(centerX, centerY, textBlockRect.left - 5, textBlockRect.top);
+        });
+    }
+
+    window.onload = connectAreasToTexts;
+    window.onresize = connectAreasToTexts; // Redraw lines on window resize
+</script>
+
+</body>
+</html>
