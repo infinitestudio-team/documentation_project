@@ -85,8 +85,9 @@
 
         document.querySelectorAll('area').forEach(area => {
             const coords = area.getAttribute('coords').split(',').map(Number);
-            const centerX = (coords[0] + coords[2]) / 2;
-            const centerY = (coords[1] + coords[3]) / 2;
+            const map = area.parentNode;
+            const centerX = (coords[0] + coords[2]) / 2 + map.offsetLeft;
+            const centerY = (coords[1] + coords[3]) / 2 + map.offsetTop;
 
             const textBlock = document.getElementById(area.getAttribute('href'));
             const textBlockRect = textBlock.getBoundingClientRect();
