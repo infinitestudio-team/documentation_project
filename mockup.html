@@ -6,6 +6,8 @@
 <title>Image Map Connector Example</title>
 <style>
     body {
+        color: ffffff;
+        font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
@@ -16,7 +18,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #f0f0f0; /* Placeholder for styling */
+        background-color: #1e1e1e; /* Placeholder for styling */
     }
     #text-blocks {
         flex: 1;
@@ -24,13 +26,16 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        background-color: #e0e0e0; /* Placeholder for styling */
+        background-color: #1e1e1e; /* Placeholder for styling */
     }
     canvas {
         position: absolute;
         top: 0;
         left: 0;
         pointer-events: none;
+    }
+    h1 {
+        font-weight: bold;
     }
 </style>
 </head>
@@ -52,15 +57,15 @@
 </div>
 
 <div id="text-blocks">
-    <div id="color_panel_settings_toggle">Settings toggle </br> Short description of this item</div>
-    <div id="color_panel_previous_color">Previous color </br> Short description of this item</div>
-    <div id="color_panel_compare">Previous color too </br> Short description of this item</div>
-    <div id="color_panel_eyedropper">Eyedropper </br> Short description of this item</div>
-    <div id="color_wheel">The color wheel </br> A longer description of this item </br> as it probably deserves more lines </br> and a couple of links too.</div>
-    <div id="color_panel_color_palette_add_color">Add a swatch to palette </br> Short description of this item</div>
-    <div id="color_panel_color_palette_name">Swatch palette name </br> Short description of this item</div>
-    <div id="colors_panel_color_palette_options">Palette options menu </br> Short description of this item</div>
-    <div id="color_panel_color_palette_swatches">Swatch palette </br> Short description of this item</div>
+    <div id="color_panel_settings_toggle"><h1>Settings toggle </h1> Short description of this item</div>
+    <div id="color_panel_previous_color"><h1>Previous color </h1> Short description of this item</div>
+    <div id="color_panel_compare"><h1>Previous color too </h1> Short description of this item</div>
+    <div id="color_panel_eyedropper"><h1>Eyedropper </h1> Short description of this item</div>
+    <div id="color_wheel"><h1>The color wheel </h1> A longer description of this item </br> as it probably deserves more lines </br> and a couple of links too.</div>
+    <div id="color_panel_color_palette_add_color"><h1>Add a swatch to palette </h1> Short description of this item</div>
+    <div id="color_panel_color_palette_name"><h1>Swatch palette name </h1> Short description of this item</div>
+    <div id="colors_panel_color_palette_options"><h1>Palette options menu </h1> Short description of this item</div>
+    <div id="color_panel_color_palette_swatches"><h1>Swatch palette </h1> Short description of this item</div>
     <!-- Add more text blocks as needed -->
 </div>
 
@@ -92,7 +97,7 @@
             const textBlock = document.getElementById(area.getAttribute('href'));
             const textBlockRect = textBlock.getBoundingClientRect();
 
-            drawLine(centerX, centerY, textBlockRect.left - 5, textBlockRect.top);
+            drawLine(centerX, centerY, textBlockRect.left - 5, textBlockRect.top + 5);
         });
     }
 
