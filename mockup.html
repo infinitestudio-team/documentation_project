@@ -85,7 +85,7 @@
 
         document.querySelectorAll('area').forEach(area => {
             const coords = area.getAttribute('coords').split(',').map(Number);
-            const map = area.parentNode;
+            const map = document.querySelector('img');
             const centerX = (coords[0] + coords[2]) / 2 + map.offsetLeft;
             const centerY = (coords[1] + coords[3]) / 2 + map.offsetTop;
 
