@@ -84,6 +84,7 @@
         ctx.lineTo(toX, toY);
         ctx.strokeStyle = '#0081f8';
         ctx.lineWidth = 4;
+        ctx.lineCap = "round";
         ctx.stroke();
     }
 
@@ -101,7 +102,7 @@
             const textBlock = document.getElementById(area.getAttribute('href'));
             const textBlockRect = textBlock.getBoundingClientRect();
 
-            drawLine(centerX, centerY, textBlockRect.left - 5, textBlockRect.top + 5);
+            drawLine(centerX, centerY, textBlockRect.left - 5, textBlockRect.top + 8);
         });
     }
 
