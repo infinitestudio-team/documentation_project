@@ -1,0 +1,18 @@
+<img src="[Color panel] (imported)" width="615" height="969" border="0" usemap="#map" />
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:PK -->
+<area shape="rect" coords="41,54,117,128" href="color_panel_settings_toggle" />
+<area shape="rect" coords="131,55,200,123" href="color_panel_previous_color" />
+<area shape="rect" coords="212,56,480,130" href="color_panel_compare" />
+<area shape="rect" coords="498,59,563,126" href="color_panel_eyedropper" />
+<area shape="rect" coords="56,689,105,741" href="color_panel_color_palette_add_color " />
+<area shape="rect" coords="125,684,485,757" href="color_panel_color_palette_name " />
+<area shape="rect" coords="494,678,565,753" href="colors_panel_color_palette_options" />
+<area shape="rect" coords="28,761,579,930" href="color_panel_color_palette_swatches" />
+<area shape="rect" coords="43,140,569,667" href="color_wheel" />
+</map>
